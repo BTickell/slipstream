@@ -1,5 +1,5 @@
 //localStorage.clear();
-updateUL();
+updateOL();
 
 function Post(userInput) {
 	
@@ -16,8 +16,9 @@ var newPost = function() {
 
 document.forms["input"].onsubmit = newPost;
 
-function updateUL() {
-	var list = document.createElement('ul');
+function updateOL() {
+	var list = document.createElement('ol');
+	list.setAttribute("id", "feedlist")
 
 	for (i = localStorage.length-1; i >= 0; i -= 1) {
 		var item = document.createElement('li');
@@ -26,5 +27,5 @@ function updateUL() {
 		list.appendChild(item);
 	}
 
-	document.getElementById('feedlist').appendChild(list);
+	document.getElementById('feed').appendChild(list);
 }
