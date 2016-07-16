@@ -1,0 +1,63 @@
+h1 {
+		position: relative;
+		left: 10px;
+		top: 15	px;
+		display: table-cell;
+		vertical-align: middle;
+	}
+body {
+	min-height: 100%
+	min-width: 100%;
+	background-image: url("../graphics/homebackground3.jpg");
+	background-repeat: no-repeat;
+	font-family: "Myriad Pro";
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-color: black;
+    overflow: hidden; 
+}
+span.title_spec {
+	color: orange;
+}
+#info {
+	position: relative;
+	left: -150px;
+	background-color: transparent;
+	min-width: 100%;
+	margin: 200px;
+	border-radius: 10px;
+	font-size: 74pt;
+	padding: 25px;
+}
+#banner {
+	display: table;
+	color: white;
+	width: 100%;
+	height: 50px;
+	border-radius: 10px;
+	border-color: black
+	border-width: 10px;
+}
+#feedlist { 
+	display: table;
+	margin: 0 auto;
+	padding: 5px;
+}
+#feedlist li {
+	padding: 5px;
+	margin: 10px;
+	background-color: #FFFFFF;
+	width: 400px;
+	min-height: 100px;
+}
+#search {
+	padding: 10px;
+	border-radius: 5px;
+	border-width: 0px;
+	position: relative;
+	bottom: 25px;
+	width: 405px;
+	left: 10px;
+}
