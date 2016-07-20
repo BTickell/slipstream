@@ -1,0 +1,17 @@
+body {
+	background-color: black;
+}
+
+#pass1, #pass2 {
+	margin: 10px;
+}
+
+input[name="pass1"], input[name="pass2"] {
+	padding: 10px;
+	border-color: transparent;
+	border-radius: 7px;
+}
+
+#password_checker {
+	color: red;
+}

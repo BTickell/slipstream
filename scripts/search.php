@@ -18,21 +18,20 @@ if (mysqli_connect_error()) {
 }
 $term = $_GET["search"];
 $to_query = "SELECT * FROM $term";
-if($conn->multi_query($to_query)) {
-	echo "FOUND";
-}
-else {
-	echo "NOT FOUND";
-}
-/*
-if ($conn->query("SELECT 1 FROM MyGuest LIMIT 1") === TRUE) {
-	echo "TABLE EXISTS";
-} else {
-	echo "TABLE DOES NOT EXIST";
-}
 
-*/
-
+// Code past this line assumes connection to DB was successful
+function queryDB($query) {
+	$conn = $GLOBALS['conn'];
+	//echo $query;
+	$result = $conn->query($query);
+	$row = $result->fetch_assoc();
+	echo "User IDs <br>";
+	while ($row) {	
+		echo "id: " . $row["id"] . "<br>"	;
+		$row = $result->fetch_assoc();
+	}
+}
+queryDB($to_query);
 $conn->close(); 
 ?>
 
