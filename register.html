@@ -6,14 +6,17 @@
 	<title>Slipstream | Register</title>
 </head>
 <body>
-<div id="forms">
-	<form id="pass1">
-		<input type="password" name="pass1">
-	</form>
-	<form id="pass2">
-		<input type="password" name="pass2">
-	</form>
-</div>
+<form id="forms" method="post">
+	<ul>
+		<li hidden="true">Invalid Username</li>
+		<li>Username <input type="username" name="user"></li>
+		<li hidden="true">Invalid Email Adress</li>
+		<li>Email <input type="email" name="email"></li>
+		<li>Password <input type="password" name="pass1"></li>
+		<li hidden="true"></li>
+		<li>Confirm Password <input type="password" name="pass2"><input type="submit" name="submit" value="Sign In" formmethod="post"></li>
+	</ul>
+</form>
 <p id="password_checker" hidden> Passwords do not match </p>
 </body>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>

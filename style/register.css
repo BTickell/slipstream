@@ -1,15 +1,21 @@
 body {
 	background-color: black;
+	color: white;
+	font-family: "Myriad Pro";
 }
 
-#pass1, #pass2 {
+input {
 	margin: 10px;
 }
-
-input[name="pass1"], input[name="pass2"] {
+#forms {
+	display: table;
+}
+#forms input {
 	padding: 10px;
 	border-color: transparent;
 	border-radius: 7px;
+	outline: none;
+	display: table-column;
 }
 
 #password_checker {

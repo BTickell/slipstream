@@ -1,6 +1,8 @@
 $(document).ready(function(){
 	var minLength = 6;
-	var currentlySame = true;
+	var passGood = false; //Global variable that tells us if the passwords match.
+	var emailGood = false;
+	var userGood = false;
 	function passCheck() {
 		// Return a boolean that represents the correctness of passwords. Do they match and meet spec?
 		var pass1 = $("[name = 'pass1']");
@@ -12,17 +14,15 @@ $(document).ready(function(){
 			$("#password_checker").hide();
 			currentlySame = true;
 		}
-		console.log(currentlySame);
 	}
-	function onSubmitPass(e) {
-		// Event handler that checks passwords
+	$("#forms").keyup(passCheck).submit(function(){$("[name = 'submit']").click()});
+	$("[name = 'submit'").click(function(e) {
 		e.preventDefault();
-		var pass1 = $("[name = 'pass1']");
-		var pass2 = $("[name = 'pass2']");
-		if (pass1.length != 6) {
-			return false;
+		check_email();
+		check_pass();
+		check_user();
+		if (userGood && passGood && emailGood) {
+			return true;
 		}
-	}
-	$("#forms").keyup(passCheck);
-	$("#forms").submit(onSubmitPass);
+	})
 });
