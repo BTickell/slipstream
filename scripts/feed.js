@@ -5,6 +5,6 @@ $(document).ready(function() {
 	});
 	function search() {
 		var data = $("#search").val();
-		window.location.assign("scripts/search.php?search=" + data);
+		window.location.assign("../search/search.php?search=" + data);
 	}
 });

@@ -1,4 +1,37 @@
 body {		
-	background-color: black;
-	color: white;
+	background-color: orange;
+	color: black;
+	font-family: "Myriad Pro";
+	text-align: center;
 }
+
+h1 {
+	padding: 25px;
+}
+
+span {
+	color: orange;
+}
+span.username {
+	color: grey;
+}
+#banner {
+	background-color: black;
+	width: 10%;
+	min-height: 100%;
+}
+#feed {
+	display: inline-block;
+	border-color: white;
+	border-width: 2px;	
+}
+
+li {
+	text-align: left;
+	border-radius: 7px;
+	background: white;
+	padding: 20px;
+	width: 200px;
+	height: 20px;
+	margin: 25px;
+	min-height: 100%;

@@ -3,7 +3,7 @@ $(document).ready(function(){
 	var passGood = false; //Global variable that tells us if the passwords match.
 	var emailGood = false;
 	var userGood = false;
-	function passCheck() {
+	function check_pass() {
 		// Return a boolean that represents the correctness of passwords. Do they match and meet spec?
 		var pass1 = $("[name = 'pass1']");
 		var pass2 = $("[name = 'pass2']");
@@ -15,6 +15,26 @@ $(document).ready(function(){
 			currentlySame = true;
 		}
 	}
+	function check_email() {
+		var re = RegExp("[a-z0-9]+@\w+\.\w+", "i");
+		var email = $("[name = 'email']").val();
+		var result = re.test(email);
+		if (result) {
+			emailGood = true;
+			return true;
+		} else {
+			emailGood = true;
+			return false;
+		}
+	}
+	function check_user() {
+		var username = $("[name = 'username']").val();
+		$.ajax({
+			url: "usercheck.php?name=" + username;
+			type: "GET";
+			 
+		})
+	}
 	$("#forms").keyup(passCheck).submit(function(){$("[name = 'submit']").click()});
 	$("[name = 'submit'").click(function(e) {
 		e.preventDefault();
@@ -22,7 +42,7 @@ $(document).ready(function(){
 		check_pass();
 		check_user();
 		if (userGood && passGood && emailGood) {
-			return true;
+			window.location.assign("account.php");
 		}
 	})
 });
